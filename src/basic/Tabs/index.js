@@ -50,8 +50,8 @@ const ScrollableTabView = createReactClass({
       tabBarPosition: 'top',
       initialPage: 0,
       page: -1,
-      onChangeTab: () => {},
-      onScroll: () => {},
+      onChangeTab: () => { },
+      onScroll: () => { },
       contentProps: {},
       scrollWithoutAnimation: false,
       locked: false,
@@ -128,7 +128,7 @@ const ScrollableTabView = createReactClass({
   updateSceneKeys({
     page,
     children = this.props.children,
-    callback = () => {}
+    callback = () => { }
   }) {
     const newKeys = this.newSceneKeys({
       previousKeys: this.state.sceneKeys,
@@ -201,7 +201,7 @@ const ScrollableTabView = createReactClass({
         keyboardDismissMode="on-drag"
         {...this.props.contentProps}
       >
-        {scenes}
+        {Platform.OS === 'android' ? scenes.revese() : scenes}
       </ScrollView>
     );
   },
@@ -221,8 +221,8 @@ const ScrollableTabView = createReactClass({
           {this._keyExists(this.state.sceneKeys, key) ? (
             child
           ) : (
-            <View heading={child.props.heading} />
-          )}
+              <View heading={child.props.heading} />
+            )}
         </SceneComponent>
       );
     });
