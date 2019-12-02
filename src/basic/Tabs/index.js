@@ -175,10 +175,6 @@ const ScrollableTabView = createReactClass({
   renderScrollableContent() {
     const scenes = this._composeScenes();
 
-    if (Platform.OS === 'android') {
-      scenes = scenes.reverse();
-    }
-
     return (
       <ScrollView
         horizontal
@@ -206,7 +202,7 @@ const ScrollableTabView = createReactClass({
         keyboardDismissMode="on-drag"
         {...this.props.contentProps}
       >
-        {scenes}
+        {Platform.OS === 'android' ? scenes.reverse() : scenes}
       </ScrollView>
     );
   },
