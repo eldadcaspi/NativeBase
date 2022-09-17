@@ -1,10 +1,14 @@
+/* eslint-disable import/order */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/prefer-es6-class */
 /* eslint-disable react/sort-comp */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
-import { FlatList, Modal, Picker, View, ViewPropTypes } from 'react-native';
+import { FlatList, Modal, View} from 'react-native';
+import { Picker } from '@react-native-picker/picker';
+import { ViewPropTypes } from 'deprecated-react-native-prop-types';
+
 import { connectStyle } from 'native-base-shoutem-theme';
 import { find, get } from 'lodash';
 

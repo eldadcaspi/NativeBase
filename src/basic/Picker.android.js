@@ -1,8 +1,10 @@
+/* eslint-disable import/order */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/prefer-es6-class */
 import React, { Component } from 'react';
+// eslint-disable-next-line import/order
 import createReactClass from 'create-react-class';
-import { Picker } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import { connectStyle } from 'native-base-shoutem-theme';
 
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
